@@ -1,0 +1,14 @@
+{
+    "name": "saeed/winecalculator",
+    "description": "This application will calcualte Wine packages",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Saeed\\Winecalculator\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/console": "^7.1",
+        "php": "^8.2"
+    }
+}
