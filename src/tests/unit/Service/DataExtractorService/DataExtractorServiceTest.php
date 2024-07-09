@@ -37,6 +37,11 @@ class DataExtractorServiceTest extends \PHPUnit\Framework\TestCase
             $mock->method('getSku')->willReturn($product['sku']);
             $mock->method('getPrice')->willReturn($product['price']);
             $mock->method('getPackageType')->willReturn($product['package_type']);
+            $mock->expects($this->once())->method('getSku');
+            $mock->expects($this->atLeastOnce())->method('getPrice');
+            $mock->expects($this->once())->method('getPackageType');
+            
+
             $output[] = $mock;
         }
 

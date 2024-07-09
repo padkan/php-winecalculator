@@ -18,7 +18,7 @@ class ValidationService implements ValidateInterface
     {
         try {
             $realPath = realpath($filePath);
-            var_dump($filePath);
+
 
             if ($realPath === false) {
                 return new ValidationResponseModel(false, '');
