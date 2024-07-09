@@ -3,9 +3,9 @@
 namespace Saeed\Winecalculator\Handler;
 
 
-use Saeed\Winecalculator\Service\Validation\ValidatorServiceFactory;
-use Saeed\Winecalculator\Service\File\FileServiceFactory;
-use Saeed\Winecalculator\Service\DataExtractor\DataExtractorServiceFactory;
+use Saeed\Winecalculator\Service\ValidationService\ValidatorServiceFactory;
+use Saeed\Winecalculator\Service\FileContentService\FileContentServiceFactory;
+use Saeed\Winecalculator\Service\DataExtractorService\DataExtractorServiceFactory;
 
 class WineCalculatorHandlerFactory
 {
@@ -13,7 +13,7 @@ class WineCalculatorHandlerFactory
     {
         return new WineCalculatorHandler(
             (new ValidatorServiceFactory())(),
-            (new FileServiceFactory())(),
+            (new FileContentServiceFactory())(),
             (new DataExtractorServiceFactory())()
         );
     }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Saeed\Winecalculator\Service\Validation;
+namespace Saeed\Winecalculator\Service\ValidationService;
 
 use Saeed\Winecalculator\Model\ValidationResponseModel;
 

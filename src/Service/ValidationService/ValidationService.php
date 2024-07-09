@@ -2,21 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Saeed\Winecalculator\Service\Validation;
+namespace Saeed\Winecalculator\Service\ValidationService;
 
 use Saeed\Winecalculator\Model\ValidationResponseModel;
+
 
 class ValidationService implements ValidateInterface
 {
     public function validate(array $data): ValidationResponseModel
     {
-        return $this->validaFilePath($data['path']);
+        return $this->validateFilePath($data['path']);
     }
 
-    private function validaFilePath(string $filePath): ValidationResponseModel
+    private function validateFilePath(string $filePath): ValidationResponseModel
     {
         try {
             $realPath = realpath($filePath);
+            var_dump($filePath);
 
             if ($realPath === false) {
                 return new ValidationResponseModel(false, '');

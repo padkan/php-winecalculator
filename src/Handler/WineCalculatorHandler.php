@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Saeed\Winecalculator\Handler;
 
 use Saeed\Winecalculator\Model\WineModel;
-use Saeed\Winecalculator\Service\Validation\ValidationService;
-use Saeed\Winecalculator\Service\File\FileService;
-use Saeed\Winecalculator\Service\DataExtractor\DataExtractorService;
+use Saeed\Winecalculator\Service\ValidationService\ValidationService;
+use Saeed\Winecalculator\Service\FileContentService\FileContentService;
+use Saeed\Winecalculator\Service\DataExtractorService\DataExtractorService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;
@@ -18,7 +18,7 @@ class WineCalculatorHandler extends Command
 {
     private const INPUT_PARAMETER_NAME = 'input';
 
-    public function __construct(private ValidationService $validationService, private FileService $fileService, private DataExtractorService $dataExtractorService)
+    public function __construct(private ValidationService $validationService, private FileContentService $fileContentService, private DataExtractorService $dataExtractorService)
     {
         parent::__construct('WINE:catalog');
     }
@@ -41,8 +41,7 @@ class WineCalculatorHandler extends Command
         }
 
         $output->writeln($validationResponse->getFileRealPath());
-        $content = $this->fileService->read($validationResponse->getFileRealPath());
-
+        $content = $this->fileContentService->read($validationResponse->getFileRealPath());
         $finalOutput = $this->dataExtractorService->extractData($content);
         $tableRows = [];
         foreach ($finalOutput as $item) {

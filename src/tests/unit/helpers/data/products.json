@@ -1,0 +1,27 @@
+{
+  "0": {
+    "sku": "WINE001",
+    "price": 62.2,
+    "package_type": "4 x 0,75 L + 1 x 0,7 L + 1 x 0,2 L"
+  },
+  "1": {
+    "sku": "WINE002",
+    "price": 89.9,
+    "package_type": "8 x 0,75 L + 2 x 1,0 L + 1 x 0,5L + 1 x 0,2 L"
+  },
+  "2": {
+    "sku": "WINE003",
+    "price": 29.9,
+    "package_type": "2 x 0,75 L + 1x 0,5 L"
+  },
+  "3": {
+    "sku": "WINE004",
+    "price": 129.9,
+    "package_type": "12 x 0,275 L"
+  },
+  "4": {
+    "sku": "WINE005",
+    "price": 29.9,
+    "package_type": "6 x 0,375 L"
+  }
+}
